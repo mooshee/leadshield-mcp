@@ -1,20 +1,22 @@
 {
   "metadata": {
-    "description": "2-stage contact form spam and B2B cold-pitch solicitation blocker for GoHighLevel, WordPress, HubSpot, and custom websites — $0.00 Stage 0 deterministic bot ...",
-    "version": "1.1.0"
+    "description": "2-stage contact form spam and B2B solicitation blocker for GHL, WP & HubSpot.",
+    "version": "1.1.1"
   },
   "name": "leadshield",
   "owner": {
     "email": "daniel@mooshworks.com",
-    "name": "Daniel Hallman"
+    "name": "Daniel Hallman",
+    "url": "https://mooshworks.com"
   },
   "plugins": [
     {
       "author": {
         "email": "daniel@mooshworks.com",
-        "name": "Daniel Hallman"
+        "name": "Daniel Hallman",
+        "url": "https://mooshworks.com"
       },
-      "description": "2-stage contact form spam and B2B cold-pitch solicitation blocker for GoHighLevel, WordPress, HubSpot, and custom websites — $0.00 Stage 0 deterministic bot drops, Stage 1 buyer-intent screening, server-side per-site policies, and automated weekly spam reports.",
+      "description": "2-stage contact form spam and B2B solicitation blocker for GHL, WP & HubSpot. $0.00 Stage 0 deterministic bot drops, Stage 1 buyer-intent screening, server-side per-site policies, and automated weekly spam reports. Built by Moosh Works (https://mooshworks.com).",
       "homepage": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker",
       "keywords": [
         "leadshield",
@@ -35,7 +37,7 @@
       "name": "leadshield",
       "repository": "https://github.com/mooshee/leadshield-mcp",
       "source": "./",
-      "version": "1.1.0"
+      "version": "1.1.1"
     }
   ]
 }

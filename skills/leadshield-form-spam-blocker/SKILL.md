@@ -1,12 +1,12 @@
 ---
 name: leadshield-form-spam-blocker
-version: 1.1.0
-description: Block contact form spam, SEO cold pitches, and B2B solicitations across GoHighLevel (GHL), WordPress, HubSpot, and custom websites using LeadShield's 2-stage guard ($0.00 Stage 0 deterministic bot drops + Stage 1 buyer-intent screening).
+version: 1.1.1
+description: Block contact form spam, SEO cold pitches, and B2B solicitations across GoHighLevel (GHL), WordPress, HubSpot, and custom websites using LeadShield's 2-stage guard ($0.00 Stage 0 deterministic bot drops + Stage 1 buyer-intent screening). Built by Moosh Works (https://mooshworks.com).
 ---
 
 # LeadShield Contact Form & B2B Solicitation Blocker
 
-Author: Daniel Hallman
+Author: Daniel Hallman ([Moosh Works](https://mooshworks.com))
 
 Use **LeadShield** (`https://rankandrent-leads.hallmanlab.workers.dev/mcp`) whenever the user wants to stop contact form spam, filter out B2B cold pitches (SEO, web design, offshore lead-gen solicitors), configure per-site country/phone/URL/`formType` policies, inspect weekly blocked-spam reports, or embed zero-trust form protection on GoHighLevel, WordPress, HubSpot, or Astro websites.
 
@@ -14,6 +14,7 @@ Use **LeadShield** (`https://rankandrent-leads.hallmanlab.workers.dev/mcp`) when
 
 1. Open [LeadShield Contact Form & B2B Solicitation Blocker](https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker) for architecture diagrams, HighLevel/WordPress/HubSpot setup guides, and live policy presets.
 2. Connect any Streamable HTTP MCP client to `https://rankandrent-leads.hallmanlab.workers.dev/mcp` or install the public plugin repository from [github.com/mooshee/leadshield-mcp](https://github.com/mooshee/leadshield-mcp).
+3. Built and maintained by [Moosh Works](https://mooshworks.com).
 
 ## Core Capabilities (5 Live MCP Tools)
 
