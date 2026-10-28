@@ -66,7 +66,7 @@
   "review_instructions": {
     "data_safety_attestation": "This MCP server does not retain user query data for model training.",
     "test_account_credentials": "Begin with read-only screening, policy inspection, and embed generation. Use dryRun: true to preview policy changes. Applying changes requires operator authorization.",
-    "video_walkthrough_url": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker"
+    "video_walkthrough_url": "REQUIRED BEFORE SUBMISSION: Add a reviewer-accessible recording of the LeadShield review cases. No recording has been verified."
   },
   "schema_version": 1,
   "test_cases": [

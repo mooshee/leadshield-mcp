@@ -72,6 +72,10 @@ Generate setup instructions for a website script, HighLevel workflow action, Wor
 
 MIT License — see [LICENSE](LICENSE).
 
+## Package and review status
+
+The included OpenAI review draft still needs a verified recording and provider checks before submission. Installing this package does not submit it to a directory.
+
 ## Release notes
 
 [Version 1.1.2 — October 28, 2026](https://github.com/mooshee/leadshield-mcp/releases/tag/v1.1.2) clarifies descriptions, screening prices, example prompts, and setup checks. Existing connections and features are unchanged. Update your plugin or skill to load the revised instructions.
