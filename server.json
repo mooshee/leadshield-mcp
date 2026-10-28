@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "description": "2-stage contact form spam and B2B solicitation blocker for HighLevel, WordPress, HubSpot, and web.",
+  "name": "io.github.mooshee/leadshield",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://rankandrent-leads.hallmanlab.workers.dev/mcp"
+    }
+  ],
+  "repository": {
+    "source": "github",
+    "url": "https://github.com/mooshee/leadshield-mcp"
+  },
+  "title": "LeadShield Contact Form & B2B Solicitation Blocker",
+  "version": "1.1.0",
+  "websiteUrl": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker"
+}

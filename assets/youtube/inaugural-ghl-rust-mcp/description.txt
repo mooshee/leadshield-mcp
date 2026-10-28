@@ -1,0 +1,43 @@
+🚀 Start GoHighLevel 14-Day Free Trial + Get $612 in AI Agency Bonuses:
+👉 https://danielhallman.com/go/ghl-trial?utm_source=youtube&utm_medium=video&utm_campaign=inaugural-ghl-rust-mcp
+
+⤴️ Already on HighLevel? Claim your $612 bonus stack & free MCP server:
+👉 https://danielhallman.com/tools/highlevel
+
+🛠️ Free HighLevel Agency & Builder MCP ($0/mo Starter • $29/mo Builder Pro • $79/mo Agency Unlimited):
+👉 https://danielhallman.com/mcp | https://ghlagencymcp.com
+
+[WHAT'S UNLOCKED IN THE $612 BONUS STACK]
+When you start a trial or upgrade through the link above, you unlock our production agency operator vault:
+• KIT-GHL ($47): 12 HighLevel sub-account workflows + 1-command spam-shield IVR
+• KIT-VOICE ($47): 16 Voice & Conversation AI prompts + 80-FAQ structured receptionist KB
+• KIT-DNS-BIMI ($47): RFC 1035 CNAME checklist, DMARC p=quarantine + 1024x1024 BIMI SVG
+• CRS-INSTALL ($150): 90-Minute client onboarding runbook + 30-scenario test scorecard
+• HighLevel Agency MCP Pro ($97/mo Value — Agency Unlimited $79/mo + Builder Pro $29/mo): 100% Free while your account is active
+Claim your bonus vault here: https://danielhallman.com/tools/highlevel#claim-bonus
+
+[CRITICAL AFFILIATE TRACKING INSTRUCTION]
+⚠️ IMPORTANT: Please disable ad blockers, Brave Shields, or privacy extensions before clicking the referral link. Ad blockers strip affiliate cookies, which prevents your account from being automatically verified for the bonus stack.
+
+[VIDEO CHAPTERS]
+0:00 - Introduction & The HighLevel Click-Ops Problem
+1:15 - Why Standard API Connectors Fall Short
+3:10 - Connecting Claude & Grok via Native Rust MCP
+5:45 - Live Demo: 60-Second Sub-Account DNS & SSL Onboarding
+8:30 - Live Demo: 1-Command Robocall Spam-Shield IVR
+11:00 - Live Demo: AI Funnel & Checkout Styling (Keeping Native Upsells)
+14:20 - Auditing Sub-Accounts with ghl-crm doctor & Snapshot Diffs
+17:15 - How to Unlock the $612 Bonus Stack & Install the MCP Free
+
+[OPERATOR RESOURCE & TOOL STACK]
+• GoHighLevel 14-Day Free Trial: https://danielhallman.com/go/ghl-trial?utm_source=youtube&utm_medium=video&utm_campaign=inaugural-ghl-rust-mcp
+• HighLevel Plan Comparison & Pricing: https://danielhallman.com/go/ghl-pricing?utm_source=youtube&utm_medium=video&utm_campaign=inaugural-ghl-rust-mcp
+• HighLevel SaaS Mode & White-Label: https://danielhallman.com/go/ghl-whitelabel?utm_source=youtube&utm_medium=video&utm_campaign=inaugural-ghl-rust-mcp
+• Agency Operator Library & Prompt Vault: https://danielhallman.com/library
+• 1Password (Zero-Knowledge Secrets): https://danielhallman.com/go/1password
+• n8n (Workflow Automation): https://danielhallman.com/go/n8n
+• Make (Cloud Integrations): https://danielhallman.com/go/make
+• Skool (Community Hosting): https://danielhallman.com/go/skool
+
+/// FTC AFFILIATE DISCLOSURE & EARNINGS DISCLAIMER
+I am an independent GoHighLevel affiliate (Promoter ID: moosh) and not an employee or agent of HighLevel. When you sign up or upgrade using the links above, I receive an affiliate commission at no additional cost to you, which funds the free development of our open-source tools and bonus library. All earnings, retainer metrics, and case studies discussed reflect real results from our production agencies and client engagements; individual agency results vary based on execution, market, and skill. Always verify technical and financial implementations in your own accounts.

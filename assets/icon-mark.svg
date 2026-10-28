@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Author: Daniel Hallman -->
+  <!-- Top Chevron: Close Green -->
+  <path d="M204 392L512 136L820 392L718 478L512 306L306 478Z" fill="#17D94B"/>
+  <!-- Middle Chevron: Nurture Blue -->
+  <path d="M204 596L512 340L820 596L718 682L512 510L306 682Z" fill="#2896FB"/>
+  <!-- Bottom Chevron: Capture Yellow -->
+  <path d="M204 800L512 544L820 800L718 886L512 714L306 886Z" fill="#FFD000"/>
+</svg>

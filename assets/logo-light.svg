@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" width="920" height="200">
+  <!-- Author: Daniel Hallman -->
+  <g transform="translate(16, 16) scale(0.1640625)">
+    <rect width="1024" height="1024" rx="224" fill="#07223D"/>
+    <rect x="36" y="36" width="952" height="952" rx="188" fill="none" stroke="#1E3A5F" stroke-width="20"/>
+    <path d="M204 392L512 136L820 392L718 478L512 306L306 478Z" fill="#17D94B"/>
+    <path d="M204 596L512 340L820 596L718 682L512 510L306 682Z" fill="#2896FB"/>
+    <path d="M204 800L512 544L820 800L718 886L512 714L306 886Z" fill="#FFD000"/>
+  </g>
+  <text x="214" y="106" fill="#07223D" font-family="'Avenir Next', 'SF Pro Display', Poppins, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="68" font-weight="800" letter-spacing="-1.5">GHL Agency</text>
+  <rect x="646" y="50" width="164" height="72" rx="16" fill="#07223D" stroke="#1E3A5F" stroke-width="3"/>
+  <text x="728" y="99" text-anchor="middle" fill="#17D94B" font-family="'SF Mono', Menlo, Consolas, monospace" font-size="40" font-weight="800" letter-spacing="2">MCP</text>
+  <text x="216" y="152" fill="#475569" font-family="'Avenir Next', 'SF Pro Text', Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="21.5" font-weight="600" letter-spacing="0.2">Funnels &#183; Client DNS &amp; SSL &#183; Spam-Shield IVR &#183; Snapshot Diffs</text>
+</svg>

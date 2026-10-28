@@ -1,0 +1,133 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "name": "Daniel Hallman",
+    "url": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker"
+  },
+  "description": "2-stage contact form spam and B2B cold-pitch solicitation blocker for GoHighLevel, WordPress, HubSpot, and custom websites — $0.00 Stage 0 deterministic bot drops, Stage 1 buyer-intent screening, server-side per-site policies, and automated weekly spam reports.",
+  "extensions": {
+    "com.openai": {
+      "categories": [
+        "Productivity",
+        "Business"
+      ],
+      "displayName": "LeadShield Contact Form & B2B Solicitation Blocker",
+      "interface": {
+        "brandColor": "#4F46E5",
+        "capabilities": [],
+        "category": "Business & Operations",
+        "composerIcon": "./assets/icon.png",
+        "defaultPrompt": [
+          "Screen this contact form submission for B2B cold solicitation and bot spam on pacific-coast-detailing.",
+          "Show the last 7 days of blocked contact form spam by category and Stage 0 vs Stage 1 breakdown.",
+          "Configure our site spam policy to allow US and CA phone numbers, block URLs in messages, and generate the 1-line guard.js embed."
+        ],
+        "developerName": "Daniel Hallman",
+        "displayName": "LeadShield Contact Form & B2B Solicitation Blocker",
+        "logo": "./assets/icon.png",
+        "longDescription": "2-stage contact form spam and B2B cold-pitch solicitation blocker for GoHighLevel, WordPress, HubSpot, and custom websites — $0.00 Stage 0 deterministic bot drops, Stage 1 buyer-intent screening, server-side per-site policies, and automated weekly spam reports.",
+        "privacyPolicyURL": "https://ghlagencymcp.com/privacy",
+        "shortDescription": "2-stage contact form spam a...",
+        "supportURL": "https://ghlagencymcp.com/support",
+        "termsOfServiceURL": "https://ghlagencymcp.com/terms",
+        "websiteURL": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker"
+      },
+      "privacyPolicy": "https://ghlagencymcp.com/privacy",
+      "publication": {
+        "release_notes": "Release v1.1.0: verified Streamable HTTP MCP tools and skills for LeadShield Contact Form & B2B Solicitation Blocker."
+      },
+      "review": {
+        "commerce": false,
+        "commerce_description": "LeadShield Contact Form & B2B Solicitation Blocker provides MCP tool execution and structured output. It does not process direct in-chat payments.",
+        "test_cases": {
+          "negative": [
+            {
+              "description": "Flight and travel booking",
+              "prompt": "Book a roundtrip flight from Seattle to Miami for next Friday."
+            },
+            {
+              "description": "Banking and wire transfers",
+              "prompt": "Wire $2,500 from my business checking account to our supplier."
+            },
+            {
+              "description": "Medical diagnosis",
+              "prompt": "Diagnose this skin rash and prescribe an antibiotic."
+            }
+          ],
+          "positive": [
+            {
+              "description": "Test Case 1: Screen Inbound Contact Form Inquiry for B2B Solicitation",
+              "expected_behavior": "Evaluates the submission against Stage 0 deterministic rules and Stage 1 buyer-intent classification, returning blocked_spam or verified_lead with reason codes and workflow branch.",
+              "prompt": "Screen this contact form message for pacific-coast-detailing: 'Hi, we can rank your detailing website #1 on Google for $199/mo! Visit https://seo-agency.biz'",
+              "tools_triggered": "leadshield_screen_submission"
+            },
+            {
+              "description": "Test Case 2: Weekly Blocked Spam Report & Category Breakdown",
+              "expected_behavior": "Returns quarantined contact form spam counts, Stage 0 vs Stage 1 breakdown, and category totals for the requested window.",
+              "prompt": "Show our blocked contact form spam report for pacific-coast-detailing over the last 7 days.",
+              "tools_triggered": "leadshield_get_blocked_spam_report"
+            },
+            {
+              "description": "Test Case 3: Inspect Active Site Spam Policy & Form-Type Preset",
+              "expected_behavior": "Returns the server-side spam guard policy including allowedCountries, allowedPhoneFormats, URL blocking rules, and active formType preset.",
+              "prompt": "Inspect the active contact form spam policy and quote_request preset for pacific-coast-detailing.",
+              "tools_triggered": "leadshield_get_spam_policy"
+            },
+            {
+              "description": "Test Case 4: Preview Custom Site Spam Policy Changes",
+              "expected_behavior": "Previews updated country, phone format, URL, and keyword rules in dry-run mode without mutating production settings.",
+              "prompt": "Preview updating our site spam policy for pacific-coast-detailing to allow US and CA countries and block URLs in messages.",
+              "tools_triggered": "leadshield_configure_spam_policy"
+            },
+            {
+              "description": "Test Case 5: Generate Zero-Trust HTML Guard Script & HighLevel Webhook Setup",
+              "expected_behavior": "Generates the 1-line guard.js script tag and HighLevel/HubSpot webhook endpoints for the target site.",
+              "prompt": "Generate the zero-trust guard.js embed script and HighLevel workflow webhook configuration for pacific-coast-detailing.",
+              "tools_triggered": "leadshield_generate_guard_embed"
+            }
+          ]
+        }
+      },
+      "termsOfService": "https://ghlagencymcp.com/terms"
+    }
+  },
+  "homepage": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker",
+  "interface": {
+    "brandColor": "#4F46E5",
+    "capabilities": [],
+    "category": "Business & Operations",
+    "composerIcon": "./assets/icon.png",
+    "defaultPrompt": [
+      "Screen this contact form submission for B2B cold solicitation and bot spam on pacific-coast-detailing.",
+      "Show the last 7 days of blocked contact form spam by category and Stage 0 vs Stage 1 breakdown.",
+      "Configure our site spam policy to allow US and CA phone numbers, block URLs in messages, and generate the 1-line guard.js embed."
+    ],
+    "developerName": "Daniel Hallman",
+    "displayName": "LeadShield Contact Form & B2B Solicitation Blocker",
+    "logo": "./assets/icon.png",
+    "longDescription": "2-stage contact form spam and B2B cold-pitch solicitation blocker for GoHighLevel, WordPress, HubSpot, and custom websites — $0.00 Stage 0 deterministic bot drops, Stage 1 buyer-intent screening, server-side per-site policies, and automated weekly spam reports.",
+    "privacyPolicyURL": "https://ghlagencymcp.com/privacy",
+    "shortDescription": "2-stage contact form spam a...",
+    "supportURL": "https://ghlagencymcp.com/support",
+    "termsOfServiceURL": "https://ghlagencymcp.com/terms",
+    "websiteURL": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker"
+  },
+  "keywords": [
+    "leadshield",
+    "spam-blocker",
+    "contact-form",
+    "b2b-solicitation",
+    "highlevel",
+    "gohighlevel",
+    "wordpress",
+    "hubspot",
+    "lead-qualification",
+    "bot-protection",
+    "honeypot",
+    "buyer-intent",
+    "mcp"
+  ],
+  "name": "leadshield",
+  "repository": "https://github.com/mooshee/leadshield-mcp",
+  "version": "1.1.0"
+}
