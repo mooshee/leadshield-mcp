@@ -1,9 +1,9 @@
 ---
 name: leadshield
 displayName: LeadShield Contact Form & B2B Solicitation Blocker
-version: 1.1.1
+version: 1.1.2
 author: Daniel Hallman
-description: 2-stage contact form spam and B2B solicitation blocker for GHL, WP & HubSpot.
+description: Filter contact form spam and unwanted sales pitches on HighLevel, WordPress, HubSpot, and custom websites.
 keywords:
   - leadshield
   - spam-blocker
@@ -24,18 +24,19 @@ mcpServers:
     url: https://rankandrent-leads.hallmanlab.workers.dev/mcp
 ---
 
-# LeadShield Contact Form & B2B Solicitation Blocker Power (AWS Kiro)
+# LeadShield Contact Form & B2B Solicitation Blocker for Kiro
 
 Author: Daniel Hallman ([Moosh Works](https://mooshworks.com))
 
-2-stage contact form spam and B2B solicitation blocker for GHL, WP & HubSpot. $0.00 Stage 0 deterministic bot drops, Stage 1 buyer-intent screening, server-side per-site policies, and automated weekly spam reports. Built by Moosh Works (https://mooshworks.com).
+Filter contact form spam and unwanted sales pitches on HighLevel, WordPress, HubSpot, and custom websites. Set rules for each site and review blocked submissions. Rule-based bot blocking is free; message screening costs $0.01 per submission on the pay-as-you-go plan. Built by Moosh Works (https://mooshworks.com).
 
 ## Quick start
 
-1. Visit [LeadShield Contact Form & B2B Solicitation Blocker](https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker) or connect Kiro to `https://rankandrent-leads.hallmanlab.workers.dev/mcp`.
-2. Built and maintained by [Moosh Works](https://mooshworks.com).
+1. Open [LeadShield Contact Form & B2B Solicitation Blocker](https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker) for setup instructions.
+2. Add `https://rankandrent-leads.hallmanlab.workers.dev/mcp` as an MCP server in Kiro using the configuration below. Complete any required sign-in.
+3. Check that the connection lists the plugin's tools before starting a task.
 
-## MCP Server Configuration
+## Server configuration
 
 ```json
 {
@@ -48,7 +49,7 @@ Author: Daniel Hallman ([Moosh Works](https://mooshworks.com))
 }
 ```
 
-## Tools Available
+## Available tools
 
 - `leadshield_configure_spam_policy`
 - `leadshield_generate_guard_embed`

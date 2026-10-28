@@ -3,11 +3,11 @@
   "app_info": {
     "category": "BUSINESS",
     "contact_email": "daniel@mooshworks.com",
-    "description": "2-stage contact form spam and B2B cold-pitch solicitation blocker for GoHighLevel (GHL), WordPress, HubSpot, and custom websites — $0.00 Stage 0 deterministic bot drops, Stage 1 calibrated buyer-intent screening, server-side per-site country/phone/URL policies, and weekly blocked-spam reports.",
+    "description": "Filter contact form spam and unwanted sales pitches on HighLevel, WordPress, HubSpot, and custom websites. Set rules for each site and review blocked submissions. Rule-based bot blocking is free; message screening costs $0.01 per submission on the pay-as-you-go plan.",
     "display_name": "LeadShield Contact Form & B2B Solicitation Blocker",
     "homepage": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker",
     "privacy_policy_url": "https://ghlagencymcp.com/privacy",
-    "subtitle": "2-Stage Form Spam & B2B Pitch Blocker",
+    "subtitle": "Filter contact form spam",
     "terms_of_service_url": "https://ghlagencymcp.com/terms"
   },
   "mcp_config": {
@@ -33,67 +33,67 @@
   ],
   "positive_test_cases": [
     {
-      "description": "Test Case 1: Screen Inbound Contact Form Inquiry for B2B Solicitation",
-      "expected_output": "Evaluates the submission against Stage 0 deterministic rules and Stage 1 buyer-intent classification, returning blocked_spam or verified_lead with reason codes and workflow branch.",
+      "description": "Check a form submission for spam or a sales pitch",
+      "expected_output": "Checks the submission against screening rules and evaluates the message if needed. Returns blocked_spam or verified_lead, reason codes, and the workflow branch.",
       "tools_triggered": "leadshield_screen_submission",
       "user_prompt": "Screen this contact form message for pacific-coast-detailing: 'Hi, we can rank your detailing website #1 on Google for $199/mo! Visit https://seo-agency.biz'"
     },
     {
-      "description": "Test Case 2: Weekly Blocked Spam Report & Category Breakdown",
-      "expected_output": "Returns quarantined contact form spam counts, Stage 0 vs Stage 1 breakdown, and category totals for the requested window.",
+      "description": "Review blocked spam from the last seven days",
+      "expected_output": "Returns blocked submission counts by screening stage and reason for the requested date range.",
       "tools_triggered": "leadshield_get_blocked_spam_report",
       "user_prompt": "Show our blocked contact form spam report for pacific-coast-detailing over the last 7 days."
     },
     {
-      "description": "Test Case 3: Inspect Active Site Spam Policy & Form-Type Preset",
+      "description": "Check a site's active screening rules",
       "expected_output": "Returns the server-side spam guard policy including allowedCountries, allowedPhoneFormats, URL blocking rules, and active formType preset.",
       "tools_triggered": "leadshield_get_spam_policy",
       "user_prompt": "Inspect the active contact form spam policy and quote_request preset for pacific-coast-detailing."
     },
     {
-      "description": "Test Case 4: Preview Custom Site Spam Policy Changes",
+      "description": "Preview changes to site rules",
       "expected_output": "Previews updated country, phone format, URL, and keyword rules in dry-run mode without mutating production settings.",
       "tools_triggered": "leadshield_configure_spam_policy",
       "user_prompt": "Preview updating our site spam policy for pacific-coast-detailing to allow US and CA countries and block URLs in messages."
     },
     {
-      "description": "Test Case 5: Generate Zero-Trust HTML Guard Script & HighLevel Webhook Setup",
+      "description": "Generate website and workflow setup instructions",
       "expected_output": "Generates the 1-line guard.js script tag and HighLevel/HubSpot webhook endpoints for the target site.",
       "tools_triggered": "leadshield_generate_guard_embed",
-      "user_prompt": "Generate the zero-trust guard.js embed script and HighLevel workflow webhook configuration for pacific-coast-detailing."
+      "user_prompt": "Generate the guard.js website script and HighLevel workflow setup instructions for pacific-coast-detailing."
     }
   ],
   "review_instructions": {
     "data_safety_attestation": "This MCP server does not retain user query data for model training.",
-    "test_account_credentials": "All 5 tools support immediate anonymous read-only screening, policy inspection, dry-run policy preview, and embed generation with no API key required.",
+    "test_account_credentials": "Begin with read-only screening, policy inspection, and embed generation. Use dryRun: true to preview policy changes. Applying changes requires operator authorization.",
     "video_walkthrough_url": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker"
   },
   "schema_version": 1,
   "test_cases": [
     {
-      "description": "Test Case 1: Screen Inbound Contact Form Inquiry for B2B Solicitation",
-      "expected_output": "Evaluates the submission against Stage 0 deterministic rules and Stage 1 buyer-intent classification, returning blocked_spam or verified_lead with reason codes and workflow branch.",
+      "description": "Check a form submission for spam or a sales pitch",
+      "expected_output": "Checks the submission against screening rules and evaluates the message if needed. Returns blocked_spam or verified_lead, reason codes, and the workflow branch.",
       "user_prompt": "Screen this contact form message for pacific-coast-detailing: 'Hi, we can rank your detailing website #1 on Google for $199/mo! Visit https://seo-agency.biz'"
     },
     {
-      "description": "Test Case 2: Weekly Blocked Spam Report & Category Breakdown",
-      "expected_output": "Returns quarantined contact form spam counts, Stage 0 vs Stage 1 breakdown, and category totals for the requested window.",
+      "description": "Review blocked spam from the last seven days",
+      "expected_output": "Returns blocked submission counts by screening stage and reason for the requested date range.",
       "user_prompt": "Show our blocked contact form spam report for pacific-coast-detailing over the last 7 days."
     },
     {
-      "description": "Test Case 3: Inspect Active Site Spam Policy & Form-Type Preset",
+      "description": "Check a site's active screening rules",
       "expected_output": "Returns the server-side spam guard policy including allowedCountries, allowedPhoneFormats, URL blocking rules, and active formType preset.",
       "user_prompt": "Inspect the active contact form spam policy and quote_request preset for pacific-coast-detailing."
     },
     {
-      "description": "Test Case 4: Preview Custom Site Spam Policy Changes",
+      "description": "Preview changes to site rules",
       "expected_output": "Previews updated country, phone format, URL, and keyword rules in dry-run mode without mutating production settings.",
       "user_prompt": "Preview updating our site spam policy for pacific-coast-detailing to allow US and CA countries and block URLs in messages."
     },
     {
-      "description": "Test Case 5: Generate Zero-Trust HTML Guard Script & HighLevel Webhook Setup",
+      "description": "Generate website and workflow setup instructions",
       "expected_output": "Generates the 1-line guard.js script tag and HighLevel/HubSpot webhook endpoints for the target site.",
-      "user_prompt": "Generate the zero-trust guard.js embed script and HighLevel workflow webhook configuration for pacific-coast-detailing."
+      "user_prompt": "Generate the guard.js website script and HighLevel workflow setup instructions for pacific-coast-detailing."
     }
   ],
   "tools": {
@@ -153,7 +153,7 @@
       },
       "justifications": {
         "destructive_justification": "Read-only generation of HTML script embed tags and CRM webhook configuration instructions.",
-        "open_world_justification": "Synthesizes integration snippets locally without external network calls.",
+        "open_world_justification": "Creates setup snippets locally without external network calls.",
         "read_only_justification": "Generates copy-paste integration code without modifying state."
       }
     }

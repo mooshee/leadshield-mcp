@@ -1,6 +1,6 @@
 # LeadShield Contact Form & B2B Solicitation Blocker
 
-2-stage contact form spam and B2B solicitation blocker for GHL, WP & HubSpot. $0.00 Stage 0 deterministic bot drops, Stage 1 buyer-intent screening, server-side per-site policies, and automated weekly spam reports. Built by Moosh Works (https://mooshworks.com).
+Filter contact form spam and unwanted sales pitches on HighLevel, WordPress, HubSpot, and custom websites. Set rules for each site and review blocked submissions. Rule-based bot blocking is free; message screening costs $0.01 per submission on the pay-as-you-go plan. Built by Moosh Works (https://mooshworks.com).
 
 Website: https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker
 MCP Endpoint: https://rankandrent-leads.hallmanlab.workers.dev/mcp
