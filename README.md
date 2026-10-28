@@ -4,7 +4,7 @@
 [![LeadShield MCP server quality and maintenance on Glama](https://glama.ai/mcp/servers/mooshee/leadshield-mcp/badges/score.svg)](https://glama.ai/mcp/servers/mooshee/leadshield-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Author: Daniel Hallman
+Author: Daniel Hallman ([Moosh Works](https://mooshworks.com))
 
 - **Website**: [LeadShield](https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker)
 - **Remote MCP Endpoint**: `https://rankandrent-leads.hallmanlab.workers.dev/mcp` (`streamable-http`)

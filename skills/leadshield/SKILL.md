@@ -5,6 +5,8 @@ description: Filter contact form spam and unwanted sales pitches on HighLevel, W
 
 # LeadShield Contact Form & B2B Solicitation Blocker
 
+Author: Daniel Hallman ([Moosh Works](https://mooshworks.com))
+
 Filter contact form spam and unwanted sales pitches on HighLevel, WordPress, HubSpot, and custom websites. Set rules for each site and review blocked submissions. Rule-based bot blocking is free; message screening costs $0.01 per submission on the pay-as-you-go plan.
 
 ## Quick start
