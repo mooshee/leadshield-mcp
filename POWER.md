@@ -1,9 +1,9 @@
 ---
 name: leadshield
 displayName: LeadShield Contact Form & B2B Solicitation Blocker
-version: 1.1.2
+version: 1.1.3
 author: Daniel Hallman
-description: Filter contact form spam and unwanted sales pitches on HighLevel, WordPress, HubSpot, and custom websites.
+description: Preview contact form screening, manage connected-site rules, review retained blocked messages, and generate setup instructions. Built by Moosh Works (https://mooshworks.com).
 keywords:
   - leadshield
   - spam-blocker
@@ -28,13 +28,13 @@ mcpServers:
 
 Author: Daniel Hallman ([Moosh Works](https://mooshworks.com))
 
-Filter contact form spam and unwanted sales pitches on HighLevel, WordPress, HubSpot, and custom websites. Set rules for each site and review blocked submissions. Rule-based bot blocking is free; message screening costs $0.01 per submission on the pay-as-you-go plan. Built by Moosh Works (https://mooshworks.com).
+Preview contact form screening, manage connected-site rules, review retained blocked messages, and generate setup instructions. Screening previews do not store or deliver leads or process payments. Built by Moosh Works (https://mooshworks.com).
 
 ## Quick start
 
 1. Open [LeadShield Contact Form & B2B Solicitation Blocker](https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker) for setup instructions.
-2. Add `https://rankandrent-leads.hallmanlab.workers.dev/mcp` as an MCP server in Kiro using the configuration below. Complete any required sign-in.
-3. Check that the connection lists the plugin's tools before starting a task.
+2. Add `https://rankandrent-leads.hallmanlab.workers.dev/mcp` as an MCP server in Kiro using the configuration below. Sign in and grant access to the intended sites.
+3. Use `leadshield_get_spam_policy` to confirm access to the intended site. Follow the [screening instructions](skills/leadshield-form-spam-blocker/SKILL.md) for previews, saved-rule checks, pricing, and installation limits.
 
 ## Server configuration
 

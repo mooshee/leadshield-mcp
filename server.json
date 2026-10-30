@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "description": "Filter contact form spam and unwanted sales pitches. (mooshworks.com)",
+  "description": "Preview form screening and manage site rules. Built by Moosh Works (https://mooshworks.com).",
   "name": "io.github.mooshee/leadshield",
   "remotes": [
     {
@@ -13,6 +13,6 @@
     "url": "https://github.com/mooshee/leadshield-mcp"
   },
   "title": "LeadShield Contact Form & B2B Solicitation Blocker",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "websiteUrl": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker"
 }

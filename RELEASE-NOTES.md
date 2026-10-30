@@ -1,11 +1,11 @@
-# LeadShield 1.1.2
+# LeadShield 1.1.3
 
 Author: Daniel Hallman
 
-October 28, 2026
+October 30, 2026
 
-This update clarifies form screening, pricing, example prompts, and the checks to follow when connecting a site or reviewing its rules.
+This update clarifies account access, screening previews, saved rule changes, report limits, and installation checks. It includes synthetic reviewer cases and an edited walkthrough recorded in ChatGPT.
 
-Existing connections, prices, and screening behavior are unchanged. Update your plugin or skill to load the revised instructions. See the [LeadShield setup guide](https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker) if you need help connecting a site.
+Screening previews do not store or deliver leads or process payments. Setup instructions require a separate installation and delivery check.
 
-Built by [Moosh Works](https://mooshworks.com).
+Update your plugin to load the revised instructions. See the [setup guide](https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker) and the [versioned release](https://github.com/mooshee/leadshield-mcp/releases/tag/v1.1.3).

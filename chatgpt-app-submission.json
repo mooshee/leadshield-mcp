@@ -3,11 +3,11 @@
   "app_info": {
     "category": "BUSINESS",
     "contact_email": "daniel@mooshworks.com",
-    "description": "Filter contact form spam and unwanted sales pitches on HighLevel, WordPress, HubSpot, and custom websites. Set rules for each site and review blocked submissions. Rule-based bot blocking is free; message screening costs $0.01 per submission on the pay-as-you-go plan.",
+    "description": "Preview how a contact form message matches your site's spam rules. Inspect or update rules, review stored blocked messages, and generate form setup instructions. Requires a LeadShield account with access to the selected site. Screening previews do not deliver a lead or charge a payment.",
     "display_name": "LeadShield Contact Form & B2B Solicitation Blocker",
     "homepage": "https://ghlagencymcp.com/use-cases/ghl-contact-form-spam-blocker",
-    "privacy_policy_url": "https://ghlagencymcp.com/privacy",
-    "subtitle": "Filter contact form spam",
+    "privacy_policy_url": "https://rankandrent-leads.hallmanlab.workers.dev/privacy",
+    "subtitle": "Check contact form messages and site rules",
     "terms_of_service_url": "https://ghlagencymcp.com/terms"
   },
   "mcp_config": {
@@ -16,97 +16,103 @@
   },
   "negative_test_cases": [
     {
-      "description": "Flight and travel booking",
-      "expected_output": "Do not invoke LeadShield; airline reservations are outside its domain.",
-      "user_prompt": "Book a roundtrip flight from Seattle to Miami for next Friday."
+      "description": "Access to an unassigned site",
+      "expected_output": "The server denies access and returns no other site's records. Do not substitute another account or site.",
+      "user_prompt": "Use only LeadShield to read the saved rules for unassigned-site-review-denied. Do not create or modify the site.",
+      "tools_triggered": "leadshield_get_spam_policy"
     },
     {
-      "description": "Banking and wire transfers",
-      "expected_output": "Do not invoke LeadShield; it cannot access bank accounts or initiate wire transfers.",
-      "user_prompt": "Wire $2,500 from my business checking account to our supplier."
+      "description": "Flight booking",
+      "expected_output": "Do not invoke LeadShield; it cannot book travel.",
+      "user_prompt": "Use only LeadShield to book a flight from Chattanooga to Boston tomorrow. Do not use other apps or make a purchase."
     },
     {
-      "description": "Medical diagnosis",
-      "expected_output": "Do not invoke LeadShield; medical advice and diagnostics are outside its scope.",
-      "user_prompt": "Diagnose this skin rash and prescribe an antibiotic."
+      "description": "Bank transfer",
+      "expected_output": "Do not invoke LeadShield; it cannot access a bank account or transfer funds.",
+      "user_prompt": "Use only LeadShield to transfer $50 from my bank account to someone else. Do not use other apps or make a transfer."
     }
   ],
   "positive_test_cases": [
     {
-      "description": "Check a form submission for spam or a sales pitch",
-      "expected_output": "Checks the submission against screening rules and evaluates the message if needed. Returns blocked_spam or verified_lead, reason codes, and the workflow branch.",
-      "tools_triggered": "leadshield_screen_submission",
-      "user_prompt": "Screen this contact form message for pacific-coast-detailing: 'Hi, we can rank your detailing website #1 on Google for $199/mo! Visit https://seo-agency.biz'"
-    },
-    {
-      "description": "Review blocked spam from the last seven days",
-      "expected_output": "Returns blocked submission counts by screening stage and reason for the requested date range.",
-      "tools_triggered": "leadshield_get_blocked_spam_report",
-      "user_prompt": "Show our blocked contact form spam report for pacific-coast-detailing over the last 7 days."
-    },
-    {
-      "description": "Check a site's active screening rules",
-      "expected_output": "Returns the server-side spam guard policy including allowedCountries, allowedPhoneFormats, URL blocking rules, and active formType preset.",
+      "description": "Inspect the review site's screening rules",
+      "user_prompt": "Show the saved screening rules for chatgpt-review-leadshield.",
       "tools_triggered": "leadshield_get_spam_policy",
-      "user_prompt": "Inspect the active contact form spam policy and quote_request preset for pacific-coast-detailing."
+      "expected_output": "Returns effectivePolicy for chatgpt-review-leadshield. It does not change the saved rules."
     },
     {
-      "description": "Preview changes to site rules",
-      "expected_output": "Previews updated country, phone format, URL, and keyword rules in dry-run mode without mutating production settings.",
-      "tools_triggered": "leadshield_configure_spam_policy",
-      "user_prompt": "Preview updating our site spam policy for pacific-coast-detailing to allow US and CA countries and block URLs in messages."
+      "description": "Preview, save, and verify rules on the synthetic site",
+      "user_prompt": "For chatgpt-review-leadshield, preview rules that allow US and CA, accept US_NANP and E164 phone formats, require review, and block message links, using general_inquiry. Show the unsaved preview first, then save those exact rules and read them back. Change only this synthetic site.",
+      "tools_triggered": "leadshield_configure_spam_policy, leadshield_get_spam_policy",
+      "expected_output": "First call configure with dryRun: true and show persisted: false. Then save the same settings with dryRun: false and confirm persisted: true. Independently read the same site and verify US/CA, us-nanp/e164, required keyword review, blocked links, and general_inquiry. State when the proposed settings already match the saved baseline."
     },
     {
-      "description": "Generate website and workflow setup instructions",
-      "expected_output": "Generates the 1-line guard.js script tag and HighLevel/HubSpot webhook endpoints for the target site.",
+      "description": "Preview a blocked message",
+      "user_prompt": "For chatgpt-review-leadshield, screen this synthetic message from the US: 'Review offer: visit https://example.com/offer'.",
+      "tools_triggered": "leadshield_screen_submission",
+      "expected_output": "Returns blocked: true, verdict: blocked_spam, a URL-related reason, stored: false, delivered: false, and billing.paymentProcessed: false. The result previews a decision; it does not submit or deliver a lead."
+    },
+    {
+      "description": "Review stored blocked messages",
+      "user_prompt": "Show the blocked-message report for chatgpt-review-leadshield for the last 7 days. Include the dates and recent synthetic messages.",
+      "tools_triggered": "leadshield_get_blocked_spam_report",
+      "expected_output": "Uses clientSlug: chatgpt-review-leadshield and days: 7. Returns a UTC calendar-day window including today, counts, reasons, and recent stored records. The earlier screening preview does not add a report record; the seeded synthetic workflow check supplies a separate stored example."
+    },
+    {
+      "description": "Generate a setup snippet",
+      "user_prompt": "Generate the HTML form guard snippet for chatgpt-review-leadshield. Explain what I need to test after installing it.",
       "tools_triggered": "leadshield_generate_guard_embed",
-      "user_prompt": "Generate the guard.js website script and HighLevel workflow setup instructions for pacific-coast-detailing."
+      "expected_output": "Returns a guard.js script tag with data-site set to chatgpt-review-leadshield and setup addresses. Explains that generating a snippet does not install or activate it."
     }
   ],
   "review_instructions": {
-    "data_safety_attestation": "This MCP server does not retain user query data for model training.",
-    "test_account_credentials": "Begin with read-only screening, policy inspection, and embed generation. Use dryRun: true to preview policy changes. Applying changes requires operator authorization.",
-    "video_walkthrough_url": "REQUIRED BEFORE SUBMISSION: Add a reviewer-accessible recording of the LeadShield review cases. No recording has been verified."
+    "data_safety_attestation": "Review uses a reserved synthetic site. Screening previews do not save messages as leads or process payments. Configured intent screening can send message context to TypeSafe; details are in the LeadShield privacy notice.",
+    "test_account_credentials": "Provide the reviewer account credentials through the submission's private account field. The account has access only to chatgpt-review-leadshield. Sign in through LeadShield's connection page and grant read and write access. Run the six positive cases in order. Only the explicit save case changes this synthetic site's rules. Never use a real client's site for this review.",
+    "video_walkthrough_url": "https://github.com/mooshee/leadshield-mcp/releases/download/v1.1.2/leadshield-chatgpt-review-20261029.mp4"
   },
   "schema_version": 1,
   "test_cases": [
     {
-      "description": "Check a form submission for spam or a sales pitch",
-      "expected_output": "Checks the submission against screening rules and evaluates the message if needed. Returns blocked_spam or verified_lead, reason codes, and the workflow branch.",
-      "user_prompt": "Screen this contact form message for pacific-coast-detailing: 'Hi, we can rank your detailing website #1 on Google for $199/mo! Visit https://seo-agency.biz'"
+      "description": "Inspect the review site's screening rules",
+      "user_prompt": "Show the saved screening rules for chatgpt-review-leadshield.",
+      "tools_triggered": "leadshield_get_spam_policy",
+      "expected_output": "Returns effectivePolicy for chatgpt-review-leadshield. It does not change the saved rules."
     },
     {
-      "description": "Review blocked spam from the last seven days",
-      "expected_output": "Returns blocked submission counts by screening stage and reason for the requested date range.",
-      "user_prompt": "Show our blocked contact form spam report for pacific-coast-detailing over the last 7 days."
+      "description": "Preview, save, and verify rules on the synthetic site",
+      "user_prompt": "For chatgpt-review-leadshield, preview rules that allow US and CA, accept US_NANP and E164 phone formats, require review, and block message links, using general_inquiry. Show the unsaved preview first, then save those exact rules and read them back. Change only this synthetic site.",
+      "tools_triggered": "leadshield_configure_spam_policy, leadshield_get_spam_policy",
+      "expected_output": "First call configure with dryRun: true and show persisted: false. Then save the same settings with dryRun: false and confirm persisted: true. Independently read the same site and verify US/CA, us-nanp/e164, required keyword review, blocked links, and general_inquiry. State when the proposed settings already match the saved baseline."
     },
     {
-      "description": "Check a site's active screening rules",
-      "expected_output": "Returns the server-side spam guard policy including allowedCountries, allowedPhoneFormats, URL blocking rules, and active formType preset.",
-      "user_prompt": "Inspect the active contact form spam policy and quote_request preset for pacific-coast-detailing."
+      "description": "Preview a blocked message",
+      "user_prompt": "For chatgpt-review-leadshield, screen this synthetic message from the US: 'Review offer: visit https://example.com/offer'.",
+      "tools_triggered": "leadshield_screen_submission",
+      "expected_output": "Returns blocked: true, verdict: blocked_spam, a URL-related reason, stored: false, delivered: false, and billing.paymentProcessed: false. The result previews a decision; it does not submit or deliver a lead."
     },
     {
-      "description": "Preview changes to site rules",
-      "expected_output": "Previews updated country, phone format, URL, and keyword rules in dry-run mode without mutating production settings.",
-      "user_prompt": "Preview updating our site spam policy for pacific-coast-detailing to allow US and CA countries and block URLs in messages."
+      "description": "Review stored blocked messages",
+      "user_prompt": "Show the blocked-message report for chatgpt-review-leadshield for the last 7 days. Include the dates and recent synthetic messages.",
+      "tools_triggered": "leadshield_get_blocked_spam_report",
+      "expected_output": "Uses clientSlug: chatgpt-review-leadshield and days: 7. Returns a UTC calendar-day window including today, counts, reasons, and recent stored records. The earlier screening preview does not add a report record; the seeded synthetic workflow check supplies a separate stored example."
     },
     {
-      "description": "Generate website and workflow setup instructions",
-      "expected_output": "Generates the 1-line guard.js script tag and HighLevel/HubSpot webhook endpoints for the target site.",
-      "user_prompt": "Generate the guard.js website script and HighLevel workflow setup instructions for pacific-coast-detailing."
+      "description": "Generate a setup snippet",
+      "user_prompt": "Generate the HTML form guard snippet for chatgpt-review-leadshield. Explain what I need to test after installing it.",
+      "tools_triggered": "leadshield_generate_guard_embed",
+      "expected_output": "Returns a guard.js script tag with data-site set to chatgpt-review-leadshield and setup addresses. Explains that generating a snippet does not install or activate it."
     }
   ],
   "tools": {
     "leadshield_screen_submission": {
       "annotations": {
         "destructiveHint": false,
-        "openWorldHint": false,
+        "openWorldHint": true,
         "readOnlyHint": true
       },
       "justifications": {
-        "destructive_justification": "Read-only screening of an inbound form message against Stage 0 deterministic rules and Stage 1 buyer-intent classification.",
-        "open_world_justification": "Evaluates the message strictly within the LeadShield edge guard service.",
-        "read_only_justification": "Computes and returns the spam/buyer-intent verdict without mutating CRM records."
+        "destructive_justification": "Returns a screening preview without deleting or changing stored leads.",
+        "open_world_justification": "Configured intent screening can send message context to TypeSafe. A rule-based rejection can finish without that request.",
+        "read_only_justification": "Does not store the submitted message as a lead, deliver it to a customer, or process a payment."
       }
     },
     "leadshield_get_blocked_spam_report": {
@@ -116,9 +122,9 @@
         "readOnlyHint": true
       },
       "justifications": {
-        "destructive_justification": "Read-only summary of quarantined contact form spam counts and categories.",
-        "open_world_justification": "Queries only the LeadShield quarantine ledger.",
-        "read_only_justification": "Reads aggregate spam statistics without modifying stored records."
+        "destructive_justification": "Reads retained blocked-message records without changing them.",
+        "open_world_justification": "Reads only records for sites assigned to the connected LeadShield account.",
+        "read_only_justification": "Returns counts, reasons, dates, and recent stored messages."
       }
     },
     "leadshield_get_spam_policy": {
@@ -128,9 +134,9 @@
         "readOnlyHint": true
       },
       "justifications": {
-        "destructive_justification": "Read-only inspection of the effective server-side spam policy and formType preset for a site.",
-        "open_world_justification": "Reads only the LeadShield policy store.",
-        "read_only_justification": "Returns effective policy settings without modifying configuration."
+        "destructive_justification": "Reads site rules without changing them.",
+        "open_world_justification": "Reads the connected site's LeadShield policy.",
+        "read_only_justification": "Returns the effective rules. An optional form preset is a preview."
       }
     },
     "leadshield_configure_spam_policy": {
@@ -140,9 +146,9 @@
         "readOnlyHint": false
       },
       "justifications": {
-        "destructive_justification": "Previews (dryRun: true) or updates a site's custom spam filter rules without deleting historical leads or quarantine records.",
-        "open_world_justification": "Operates strictly within the LeadShield server-side policy store.",
-        "read_only_justification": "Supports persisting updated per-site spam policy rules when dryRun is false and operator auth is provided."
+        "destructive_justification": "Changes site screening rules when dryRun is false; it does not delete stored messages.",
+        "open_world_justification": "Updates only the selected site's LeadShield policy.",
+        "read_only_justification": "Defaults to preview. Saving requires account write access and returns the policy read back from storage."
       }
     },
     "leadshield_generate_guard_embed": {
@@ -152,9 +158,9 @@
         "readOnlyHint": true
       },
       "justifications": {
-        "destructive_justification": "Read-only generation of HTML script embed tags and CRM webhook configuration instructions.",
-        "open_world_justification": "Creates setup snippets locally without external network calls.",
-        "read_only_justification": "Generates copy-paste integration code without modifying state."
+        "destructive_justification": "Generates setup instructions without changing a website or workflow.",
+        "open_world_justification": "Builds a snippet and setup addresses without contacting another service.",
+        "read_only_justification": "Does not install or activate the form guard."
       }
     }
   }
